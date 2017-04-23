@@ -1,0 +1,416 @@
+body{
+    background: url(../img/backgrounds/food5.jpg) fixed;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #F4D100;
+  outline: 1px solid #333333;
+}
+
+.navbar li {
+  color: #333333;
+}
+.navbar .homeSearch{
+    padding: 4px;
+    border-radius: 4px;
+    border-style: none;    
+    /*margin-top: 4px;*/
+}
+
+.navbar-default .navbar-nav > .active,
+.navbar-default .navbar-nav li:hover{
+    color: #F2743A;
+}
+
+
+
+/*                                          FILTROS                                         */
+
+.homeFiltros{
+    display:none;
+    background-color: #333333;
+    opacity: 0.95;
+    color: white;
+    padding: 8px;
+    text-align: center;
+}
+
+.homeFiltrosForm{
+    display: inline;
+}
+
+.homeFiltrosSpan{
+    margin-left:25px;
+}
+
+.homeFiltrosSpanA{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#formFiltrosButton{
+    margin-left:42px;
+    background: #333333;
+    border-radius: 5px;
+    border-style: 1px solid;
+    padding: 6px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border: none;
+}
+
+#formFiltrosButton:hover{
+    background-color: white;
+    color: #333333;
+}
+
+#formFiltrosCheckboxTitulo, #formFiltrosCheckboxUsuario{
+    margin-left: 5px;
+}
+
+.homeFiltrosInputDate{
+    color: #333333;    
+    border-radius: 5px;
+}
+
+
+
+/* Removes the clear button from date inputs */
+.homeFiltros input[type="date"]::-webkit-clear-button {
+    display: none;
+}
+
+/* Removes the spin button */
+.homeFiltros input[type="date"]::-webkit-inner-spin-button { 
+    display: none;
+}
+
+/* Always display the drop down caret */
+.homeFiltros input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #333333;
+}
+
+/* A few custom styles for date inputs */
+.homeFiltros input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color: #333333;
+    font-size: 16px;
+    border:1px solid #ecf0f1;
+    background: #f2f2f2;
+    padding:0px;
+    display: inline-block !important;
+    visibility: visible !important;
+}
+
+.homeFiltros input[type="date"], focus {
+    color: #333333;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+
+
+
+/*                                          SIDEBAR                                        */
+/* Profile container */
+.profile {
+    /* background-color: aliceblue; */
+    opacity: 0.95;
+    height: auto;
+}
+
+/* Profile sidebar */
+
+.separador{ 
+    display: block;
+    margin: 20px auto;
+	 border-color: #F4D100;
+	 text-align: center;
+     width: 70%;
+     border-width: 2px;
+}
+
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #333333;
+    opacity: 0.9;
+    height: auto;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 100px;
+  height: 90px;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+  
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #f2f2f2;
+  color: #F2743A;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #F2743A;
+  background-color: #f2f2f2;
+  border-left: 2px solid #F2743A;
+  margin-left: -2px;
+}
+
+
+/*                  Home Content                     */
+
+.row.profile {
+    height: auto;
+} 
+
+
+.profile-content {
+  padding: 20px;
+    background: #333333;
+    opacity: 0.9;
+    min-height: 430px;
+    color: white;
+    width: 100%;  
+    margin-bottom: 0px;
+    top: 20%;
+    left: 30%;
+}
+
+
+.homeImgPost{
+    padding-top: 15px;
+    height: 270px;
+    width: 320px;
+}
+
+
+.homeUsersIcon{
+    
+    margin-top: 10px;
+    height: 35px;
+    width: 40px; 
+    border-radius: 50%;
+    display: inline;
+}
+
+.homeText{
+    padding-top: 15px;    
+    text-align: center;
+}
+
+.homeTitle{
+    font-size: 36px;
+    text-align: center;
+    line-height: 35px;
+}
+
+.separadorPosts{
+    border-color: #F4D100;
+	 width: 100%;
+	 text-align: center;
+     border-width: 2px;
+    padding: 0;
+    margin: 0;
+}
+
+.homeUsersname{
+    color: white;
+    display: inline;
+    padding-left: 5px;
+}
+
+.homeUsername:hover{
+    text-decoration: none;
+    color: #F2743A;
+}
+
+
+.homeDescription{
+    text-align: center;
+    margin-top: 20px;
+    width: auto;
+    
+}
+
+
+
+.homeDatePost{
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+.datePost{
+    margin-top: 15px;
+    text-align: center;
+}
+
+
+
+.homeMoreInformation, .editarPost{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.homeMoreInformationLink, .editarPost{
+    color: white;
+}
+
+.homeMoreInformationLink:hover, .editarPost:hover{
+    text-decoration: none;
+    color: #F2743A;
+}
+
+
+.spanSeparador{
+    padding: 10px;
+    
+}
+
+
+/*                 Pagination Buttons               */
+
+footer{
+    
+    margin-bottom: 75px;
+}
+
+.homePageButtons, .homePageButtons:visited{
+    background-color: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: white;
+    margin-right: 6px;
+    padding: 10px;
+}
+
+.homePageButtons:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: #333333;
+    text-decoration: none;
+}
+
+
+
+/*                  EXTRAS                  */
+.postCross{
+    position:absolute;
+    right: 0px;
+    color:white;
+}
+
+.postEditar{
+    position: absolute;
+    right:70px;
+    font-size: 18px;
+    padding-top: 2px;
+    text-decoration: none;
+    color:white;
+}
+
+.postEditar:hover{
+    text-decoration: none;  
+    color: #F2743A;
+}
+
+
+.imgPost{
+    margin-top: 30px;
+    height: 270px;
+    width: 320px;
+}
+
+
+
+.homeTitlePost{
+    font-size: 36px;
+    text-align: center;
+    line-height: 35px;   
+}
+
+
+
+.postIngredientes{
+    text-align: center;
+    margin-top: 40px;
+    width: auto;
+}
+
+.postProcedimiento{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    width: auto;
+}
+
+
+
+.postBackground{
+    height: auto;
+    background-color: #333333;
+    opacity: 0.98;
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
+
+
+
+
+
+
+
+
+

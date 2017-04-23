@@ -1,0 +1,73 @@
+.verprofile-content {
+    padding: 20px;
+    background: #333333;
+    opacity: 0.9;
+    height: auto;
+    color: white;
+    width: auto;  
+    margin-bottom: 0px;
+    
+}
+.perfilTitle{
+    font-size: 36px;
+    text-align: center;
+    line-height: 45px;
+    margin-top: 70px;
+}
+
+.separadorPosts{
+    margin-bottom: 20px;
+}
+
+.siguiendo, .seguidores{
+    color: white;
+}
+
+.siguiendo:hover, .seguidores:hover{
+    text-decoration: none;
+    color: #F2743A;
+}
+
+.perfilImage{
+    padding-top: 15px;
+    height: 270px;
+    width: 310px;
+}
+
+.seguir{
+    background-color: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: white;
+    padding: 10px;
+}
+
+.seguir:hover{    
+    background-color: white;
+    border-radius: 5px;
+    color: #333333;
+    text-decoration: none;
+}
+
+
+.seguidoresprofile-content{
+    padding: 20px;
+    background: #333333;
+    opacity: 0.9;
+    height: auto;
+    color: white;
+    width: auto;  
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.espacioseguidres{
+    margin-right: 30px;
+}
+
+
+.activeS{
+    color:#F2743A;
+}
+
+
