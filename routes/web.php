@@ -16,7 +16,7 @@ use App\User;
 use App\Category;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 // Prueba para confirmar que traiga bien todo de la Base de Datos

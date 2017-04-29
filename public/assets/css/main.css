@@ -144,8 +144,8 @@ a:hover {
   background: #333;
 }
 #hero-area {
-  background: url(../img/backgrounds/food2.jpg) fixed;
-  background-size: cover;
+  /*background: url(../img/backgrounds/food2.jpg) fixed;
+  background-size: cover;*/
   color: #fff;
 }
 #hero-area .btn {
@@ -193,11 +193,13 @@ a:hover {
   margin-bottom: 30px;
 }
 
+/*
 #sign-in-area,
 #sign-up-area {
-background: url(../img/backgrounds/food2.jpg) fixed;
-/*background-size: cover; */
+  background: url(../img/backgrounds/food2.jpg) fixed;
+  background-size: cover; 
 }
+*/
 #sign-in-area .title-big,
 #sign-up-area .title-big,
 #sign-up-area .title-big-signup {
