@@ -23,18 +23,6 @@
 
     <!-- Extras -->
     <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
-
-    <!-- jQuery Load -->
-    <script src="assets/js/jquery-min.js"></script>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 </head>
 
 <body ng-app="myApp">
@@ -44,6 +32,28 @@
     <div ng-view id="key-features-background"></div>
 
     <div ng-include="'partials/footer.html'"></div>
+
+    <!-- jQuery Load -->
+    <script src="assets/js/jquery-min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- All JS plugin Triggers -->
+    <script src="assets/js/main.js"></script>
+    <!-- JS Validaciones -->
+    <script src="assets/js/validaciones-signup.js"></script>
+    <!-- JS Plugin Validaciones -->
+    <script src="assets/js/notify.js" type="text/javascript"></script>
+    <!-- AngularJS Core -->
+    <script src="assets/js/angular.min.js"></script>
+    <!-- AngularJS Route -->
+    <script src="assets/js/angular-route.min.js"></script>
 
     <script>
         var app = angular.module("myApp", ["ngRoute"]);
@@ -59,7 +69,13 @@
                     templateUrl: "templates/sign-in.html"
                 });
         });
+        app.run(['$rootScope', function ($rootScope) {
+            $rootScope.$on('$routeChangeSuccess', function (next, current) {
+                console.log("TESTING");
+            });
+        }]);
     </script>
+
 </body>
 
 </html>
