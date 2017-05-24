@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Foodylicious</title>
 
     <link rel="icon" type="image/png" href="assets/img/icon.png" />
 
@@ -23,6 +23,8 @@
 
     <!-- Extras -->
     <link rel="stylesheet" type="text/css" href="assets/extras/animate.css">
+    
+    
 </head>
 
 <body ng-app="myApp">
@@ -48,12 +50,14 @@
     <script src="assets/js/main.js"></script>
     <!-- JS Validaciones -->
     <script src="assets/js/validaciones-signup.js"></script>
+    <script src="assets/js/validaciones-signin.js"></script>
     <!-- JS Plugin Validaciones -->
     <script src="assets/js/notify.js" type="text/javascript"></script>
     <!-- AngularJS Core -->
     <script src="assets/js/angular.min.js"></script>
     <!-- AngularJS Route -->
     <script src="assets/js/angular-route.min.js"></script>
+    
 
     <script>
         var app = angular.module("myApp", ["ngRoute"]);
@@ -74,6 +78,7 @@
                 console.log("TESTING");
             });
         }]);
+        
     </script>
 
 </body>

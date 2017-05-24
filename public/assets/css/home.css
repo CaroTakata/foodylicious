@@ -1,5 +1,6 @@
 body{
     background: url(../img/backgrounds/food5.jpg) fixed;
+    background-color: #333333;
 }
 
 body::-webkit-scrollbar {
@@ -123,6 +124,8 @@ body::-webkit-scrollbar-thumb {
 
 /*                                          SIDEBAR                                        */
 /* Profile container */
+
+
 .profile {
     /* background-color: aliceblue; */
     opacity: 0.95;

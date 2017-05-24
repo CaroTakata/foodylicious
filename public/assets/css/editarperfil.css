@@ -2,6 +2,7 @@
     
 body{
     background: url(../img/backgrounds/food5.jpg) fixed;
+    background-color: #333333;
 }
 
 body::-webkit-scrollbar {
