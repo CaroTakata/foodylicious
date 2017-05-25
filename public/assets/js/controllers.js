@@ -14,4 +14,14 @@ angular.module('myApp')
             $("#homeFiltros").slideDown(800);
         };
         
+    }])
+    .controller('newPostController', ['$scope', function ($scope, $rootScope) {
+        $scope.buscarClick = function(){
+            $("#publicarImg").click(function(){
+                $("#publicarImagen").trigger("click");
+            }
+            );
+        };
+        
     }]);
+

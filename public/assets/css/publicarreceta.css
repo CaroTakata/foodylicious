@@ -271,6 +271,8 @@ body::-webkit-scrollbar-thumb {
     right: 45px;
 }
 
+
+
 .editarButtonsCancelar, .editarButtonsGuardarCambios{
     margin-top: 60px;
 }
@@ -305,7 +307,7 @@ body::-webkit-scrollbar-thumb {
     width: 60%;
 }
 
-#publicarDescripcion, #editarDescripcion{
+#publicarDescripcion, #editarDescripcion, #comentarioTextarea{
     font-size: 16px;
     color: #333333;
     margin-top: 15px;

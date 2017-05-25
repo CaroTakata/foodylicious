@@ -1,4 +1,4 @@
-<section>
+<section ng-controller="newPostController">
          <div class="col-md-8 ">
              <div class="row" >
                 <div class="publicar-content">
@@ -13,7 +13,7 @@
                             
                             <input type="file" name="publicarImagen" id="publicarImagen" class="publicarImagen"/> 
                             <label for="publicarImagen">Choose a file...</label>
-                            <input type="image" src="assets/img/img.png" border="0" id="publicarImg"/>
+                            <input type="image" src="assets/img/img.png" border="0" id="publicarImg" ng-click="buscarClick()"/>
                         </center>
                     
                               

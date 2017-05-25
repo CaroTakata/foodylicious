@@ -29,6 +29,9 @@ var app = angular.module("myApp", ["ngRoute"])
                 .when("/seguidores", {
                     templateUrl: "templates/seguidores.html"
                 })
+                .when("/perfil", {
+                    templateUrl: "templates/verotroperfil.html"
+                })
             .otherwise({
                 redirectTo: '/' 
             });

@@ -326,7 +326,6 @@ body::-webkit-scrollbar-thumb {
 /*                 Pagination Buttons               */
 
 footer{
-    
     margin-bottom: 75px;
 }
 
@@ -411,9 +410,102 @@ footer{
 
 
 
+.agregarComentario{
+    margin-top: 45px;
+    margin-bottom: 100px;
+}
+
+#ComentariosPost{
+    margin-left: 75px;
+}
+
+#publicarComentario{
+    background-color: #333333;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: white;
+    margin-right: 6px;
+    padding: 10px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 25px; 
+    position: absolute;
+    
+    right: 80px;
+}
+
+#publicarComentario:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: #333333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.comentarioBlock{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.dateComentario{
+    font-size: 12px;
+}
 
 
+.comentariosBotones{
+    margin-top: 60px;
+}
+
+.comentariosPageButtons, .comentariosPageButtons:visited{
+    background-color: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: white;
+    margin-right: 6px;
+    padding: 10px;
+    
+}
+
+.comentariosPageButtons:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: #333333;
+    text-decoration: none;
+}
 
 
+.divBotonNuevaReceta{
+    
+    display: block;
+    position: absolute;
+    right: 0px;
+    
+}
 
+#botonNuevaReceta{
+    z-index: 1;
+    right: 0px;
+    display: block;
+    width: 90%;
+    
+    background-color: none;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: white;
+    padding-right: 0px;
+    padding: 10px;
+    
+}
 
+#botonNuevaReceta:hover{
+    background-color: white;
+    border-radius: 5px;
+    color: #333333;
+    text-decoration: none;
+}
+
+.divBotonNuevaRecetaFavs{
+    z-index: 1;
+    right: 30px;
+    display: block;
+}
