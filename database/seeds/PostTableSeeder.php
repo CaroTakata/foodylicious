@@ -22,6 +22,7 @@ class PostTableSeeder extends Seeder
                         '3.- Saca los portobellos del horno y barniza con la reducción de balsámico, decora con albahaca.',
             'category_id' => '1',
             'user_id' => '1',
+            'image' => 'food1.jpg',
         ]);
         $post->save();
 
@@ -34,6 +35,7 @@ class PostTableSeeder extends Seeder
                         '3.- Termina con más fruta y decora con mitades de nueces.',
             'category_id' => '2',
             'user_id' => '2',
+            'image' => 'food2.jpg',
         ]);
         $post->save();
 
@@ -47,6 +49,7 @@ class PostTableSeeder extends Seeder
                         '4.- Incorpora el durazno, la piña, la nuez y mezcla.',
             'category_id' => '2',
             'user_id' => '1',
+            'image' => 'food3.jpg',
         ]);
         $post->save();
     }
