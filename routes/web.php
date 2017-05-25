@@ -27,8 +27,21 @@ Route::get('/home', function () {
 
 Route::get('/api/post', function () {
     
-    $posts = Post::all();
-    
+    $posts = Post::all();    
+
+    // Agregamos las categorias como nombre y no como objeto
+    $posts->each(function ($post) {
+        $category = $post->category()->get()->first();
+        $post->category = $category->name;
+        $post->comments = $post->comments()->get();
+        // $user = User::find($post->user_id);
+        // $post->user = $user;
+        $user = $post->user()->get()->first();
+        $post->userName = $user->name;
+        $post->avatar = $user->avatar;
+        $post->likes = $post->likes()->count();        
+    });
+
     return response()
             ->json( $posts );
 });
