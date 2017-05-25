@@ -23,6 +23,7 @@ class CreatePostsTable extends Migration
             $table->text('ingredients');
             $table->text('description');
             $table->text('method');
+            $table->text('image');
             
             //Foreign keys 
                 //Usuarios
