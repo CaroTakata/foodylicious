@@ -17,6 +17,18 @@ var app = angular.module("myApp", ["ngRoute"])
                 .when("/editar-perfil", {
                     templateUrl: "templates/editarperfil.html"
                 })
+                .when("/publicacion", {
+                    templateUrl: "templates/verpost.html"
+                })
+                .when("/editar-publicacion", {
+                    templateUrl: "templates/editarpost.html"
+                })
+                .when("/siguiendo", {
+                    templateUrl: "templates/siguiendo.html"
+                })
+                .when("/seguidores", {
+                    templateUrl: "templates/seguidores.html"
+                })
             .otherwise({
                 redirectTo: '/' 
             });
