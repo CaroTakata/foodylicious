@@ -15,12 +15,22 @@ use App\Post;
 use App\User;
 use App\Category;
 
+use App\Classes\JWT;
+
 Route::get('/', function () {
     return view('index');
 });
 
 Route::get('/home', function () {
     return view('home');
+});
+
+Route::get('/api/post', function () {
+    
+    $posts = Post::all();
+    
+    return response()
+            ->json( $posts );
 });
 
 // Prueba para confirmar que traiga bien todo de la Base de Datos
