@@ -30,6 +30,15 @@
     
     <!-- HOME -->
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+    
+    <!-- PublicarReceta --> 
+    <link rel="stylesheet" type="text/css" href="assets/css/publicarreceta.css">
+    
+    <!-- Perfil -->
+  <link rel="stylesheet" type="text/css" href="assets/css/perfil.css">
+    
+    <!-- Editar Perfil -->
+  <link rel="stylesheet" type="text/css" href="assets/css/editarperfil.css">
 
 
   <!-- jQuery Load -->
@@ -46,7 +55,7 @@
 <body ng-app="myApp">
     
   <!-- Nav Menu Section -->
-    <div ng-include="'partials/nav-menu-home.html'"></div>    
+    <div ng-include="'partials/header.html'"></div>    
   <!-- Nav Menu Section End -->
     
     
@@ -64,30 +73,17 @@
         
         
     <!-- POSTS -->
-    <div class="col-md-8">
         <div ng-view></div>
-    </div>
     <!-- END POSTS -->
+        
+        
     
     
         
         
     </div>        
 </div>
-    
-   <!-- Footer -->
-    <center>
-    <footer class="container-fluid text-center">
-    
-        <a href="#" class="homePageButtons">Anterior</a>
-        <a href="#" class="homePageButtons">Siguiente</a>
-            
-    
-    <!-- <span class="glyphicon glyphicon-chevron-up"></span> -->  
-    </footer>
-    </center>
-    
-    <!-- End Footer -->
+   
     
     
     
@@ -98,6 +94,7 @@
     
     <!-- APP JS -->
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/controllers.js"></script>
     
     <!-- JS Filtros -->
     <script src="assets/js/barrafiltros.js"></script>
