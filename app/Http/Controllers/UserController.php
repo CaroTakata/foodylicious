@@ -45,7 +45,7 @@ class UserController extends Controller
         else
         {
             $fileName = $file->getClientOriginalName();
-            $file->move(public_path().'/images/',  $fileName);
+            $file->move(public_path().'/img/usuarios/',  $fileName);
             $user = new User();        
             $user->email    = $email;
             $user->password = $password;

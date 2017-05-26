@@ -3,7 +3,7 @@ var app = angular.module("myApp", ["ngRoute"])
             $locationProvider.hashPrefix('');
             $routeProvider                
                 .when("/", {
-                    templateUrl: "templates/post.html"
+                    templateUrl: "templates/publicaciones.html"
                 })
                 .when("/publicar-receta", {
                     templateUrl: "templates/publicarreceta.html"

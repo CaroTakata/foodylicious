@@ -1,6 +1,6 @@
 <row>
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs divBotonNuevaReceta">
-    <a href="#publicar-receta" id="botonNuevaReceta"><i class="fa fa-pencil-square-o"></i>  Publicar receta</a>
+        <a href="#publicar-receta" id="botonNuevaReceta"><i class="fa fa-pencil-square-o"></i>  Publicar receta</a>
     </div>
 </row>
 
@@ -8,9 +8,8 @@
     <div class="profile-content">
         <div class="col-md-12">
             <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-
-
         </div>
+        
         <div class="col-md-6">
             <img class="homeImgPost img-responsive" ng-src="img/{{post.image}}" />
         </div>
@@ -18,18 +17,16 @@
         <div class="col-md-6 homeText">
             <p class="homeTitle">{{ post.title }}</p>
             <hr class="separadorPosts">
-                    <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                        <a href="verotroperfil.html"  class="homeUsersname">{{ post.userName }}</a>
-            <p class="homeDescription">
-                {{ post.description }}
-            </p>
-        </div>                        
+            <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
+            <a href="verotroperfil.html" class="homeUsersname">{{ post.userName }}</a>
+            <p class="homeDescription"> {{ post.description }} </p>
+        </div>
 
         <div class="col-md-12 homeDatePost">
             <p class="">{{ post.created_at }}</p>
         </div>
 
-        <div class="col-md-12 homeMoreInformation">  
+        <div class="col-md-12 homeMoreInformation">
             <a href="#" class="homeMoreInformationLink">Más información</a>
         </div>
     </div>
