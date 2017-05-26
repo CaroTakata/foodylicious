@@ -26,9 +26,7 @@ angular.module('myApp')
     }])
     .controller('newPostController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.buscarClick = function () {
-            $("#publicarImg").click(function () {
-                $("#publicarImagen").trigger("click");
-            });
+            $("#publicarImagen").trigger("click");
         };
 
         $scope.submitClick = function (file) {
