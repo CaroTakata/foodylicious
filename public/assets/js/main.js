@@ -25,7 +25,7 @@ app
 
             $http({
                 method: 'POST',
-                url: 'http://localhost:8000//api/login',
+                url: 'http://localhost:8000/api/login',
                 data:
                 {
                     'email': email,

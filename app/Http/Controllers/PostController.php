@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -72,18 +73,10 @@ class PostController extends Controller
     // Muestra una publicación en especifico
     public function show($id)
     {        
-        $post = Post::find($id);    
+        $user = User::find($id);
+        $user->posts = $user->posts()->get(); 
 
-        $category = $post->category()->get()->first();
-        $post->category = $category->name;
-        $post->comments = $post->comments()->get();        
-        $user = $post->user()->get()->first();
-        $post->userName = $user->name;
-        $post->user_id = $user->id;
-        $post->avatar = $user->avatar;
-        $post->likes = $post->likes()->count();        
-
-        return response()->json( $post );
+        return response()->json( $user );
     }
 
     // PUT/PATCH

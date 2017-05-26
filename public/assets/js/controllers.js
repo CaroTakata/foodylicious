@@ -36,6 +36,28 @@ angular.module('myApp')
         };
 
     }])
+    .controller('perfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+
+        $scope.usuario = JSON.parse(localStorage.usuario);
+        $id = $scope.usuario.id;
+
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/post/' + $id
+        }).then(function successCallback(response) {
+            $scope.usuario = response.data;
+            console.log(response.data);
+        }, function errorCallback(response) {
+            console.log(response.data);
+            alert("Ocurrió un error inesperado");
+        });
+
+    }])
+    .controller('editarPerfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+
+        $scope.usuario = JSON.parse(localStorage.usuario);
+        
+    }])
     .controller('newPostController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.buscarClick = function () {
             $("#publicarImagen").trigger("click");
