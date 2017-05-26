@@ -18,10 +18,10 @@ class UserTableSeeder extends Seeder
         DB::table('users')->delete();
 
         $users = array(
-                ['name' => 'Ryan Chenkie', 'email' => 'ryanchenkie@gmail.com', 'password' => Hash::make('secret'), 'avatar' => 'apple.jpg'],
-                ['name' => 'Chris Sevilleja', 'email' => 'chris@scotch.io', 'password' => Hash::make('secret'), 'avatar' => 'chefsito.jpg'],
-                ['name' => 'Holly Lloyd', 'email' => 'holly@scotch.io', 'password' => Hash::make('secret'), 'avatar' => 'garfield.jpg'],
-                ['name' => 'Adnan Kukic', 'email' => 'adnan@scotch.io', 'password' => Hash::make('secret'), 'avatar' => 'gordon.jpg'],
+                ['name' => 'Fernando Cantú', 'email' => 'fernandoc@gmail.com', 'password' => Hash::make('secret'), 'gender' => '1', 'avatar' => 'apple.jpg'],
+                ['name' => 'Christina Sevilleja', 'email' => 'christinas@gmail.com', 'password' => Hash::make('secret'), 'gender' => '2', 'avatar' => 'chefsito.jpg'],
+                ['name' => 'Omar Ríos', 'email' => 'omarr@gmail.com', 'password' => Hash::make('secret'), 'gender' => '1'. 'avatar' => 'garfield.jpg'],
+                ['name' => 'Iván López', 'email' => 'ivanl@hotmail.com', 'password' => Hash::make('secret'), 'gender' => '1', 'avatar' => 'gordon.jpg'],
         );
             
         // Loop through each user above and create the record for them in the database
