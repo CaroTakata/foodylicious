@@ -1,4 +1,4 @@
-var app = angular.module("myApp", ["ngRoute"])
+var app = angular.module("myApp", ['ngRoute', 'ngFileUpload'])
         .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
             $locationProvider.hashPrefix('');
             $routeProvider                

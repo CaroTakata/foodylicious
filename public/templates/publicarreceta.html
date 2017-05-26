@@ -1,30 +1,27 @@
 <section ng-controller="newPostController">
-         <div class="col-md-8 ">
-             <div class="row" >
-                <div class="publicar-content">
-                    
-                        <form class="publicarText">
-                        <center>
-                        <input type="text" class="publicarInputTitulo" placeholder="Título" maxlength="40"/>
+    <div class="col-md-8 ">
+        <div class="row">
+            <div class="publicar-content">
+                <form class="publicarText">
+                    <center>
+                        <input type="text" id="publicarInputTitulo" class="publicarInputTitulo" placeholder="Título" maxlength="40" />
                         <hr class="separadorPosts">
-                            <textarea class="form-control" cols="5" rows="5" id="publicarDescripcion" maxlength="250" placeholder="Descripción"></textarea>   
-                            <textarea class="form-control" cols="5" rows="5" id="publicarIngredientes" maxlength="250" placeholder="Ingredientes"></textarea>   
-                            <textarea class="form-control" cols="5" rows="5" id="publicarProcedimiento" maxlength="250" placeholder="Procedimiento"></textarea> 
-                            
-                            <input type="file" name="publicarImagen" id="publicarImagen" class="publicarImagen"/> 
-                            <label for="publicarImagen">Choose a file...</label>
-                            <input type="image" src="assets/img/img.png" border="0" id="publicarImg" ng-click="buscarClick()"/>
-                        </center>
-                    
-                              
-                                <a href="home.html"><input type="button" class="publicarButtonsCancelar" value="Cancelar"/></a>
-                            
-                                <input type="submit" class="publicarButtonsPublicar" value="Publicar"/>
-                            
-                        </form>
-                    
-                </div>
-            </div>    
+                        <textarea class="form-control" cols="5" rows="5" id="publicarDescripcion" maxlength="250" placeholder="Descripción"></textarea>
+                        <textarea class="form-control" cols="5" rows="5" id="publicarIngredientes" maxlength="250" placeholder="Ingredientes"></textarea>
+                        <textarea class="form-control" cols="5" rows="5" id="publicarProcedimiento" maxlength="250" placeholder="Procedimiento"></textarea>
+                        <br>
+                        <label for="publicarImagen">Escoge una foto</label>
+                        <br>
+                        <input type="image" src="assets/img/img.png" border="0" id="publicarImg" ng-click="buscarClick()" />
+                    </center>
+                    <a href="#/"><input type="button" class="publicarButtonsCancelar" value="Cancelar"/></a>
+                    <!--<input type="submit" class="publicarButtonsPublicar" value="Publicar" />-->
+
+                    <input class="hidden" id="publicarImagen" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" title="Cambiar foto de perfil">                    
+                    <button class="publicarButtonsPublicar" ng-click="submitClick(picFile)">Publicar</button>
+                </form>
+            </div>
+        </div>
     </div>
-   
+
 </section>

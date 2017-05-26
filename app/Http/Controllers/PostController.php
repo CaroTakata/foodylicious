@@ -32,7 +32,39 @@ class PostController extends Controller
     // Almacena una publicación
     public function store(Request $request)
     {
-        return "Post store";
+        $title = $request->input('title');
+        $description = $request->input('description');
+        $ingredients = $request->input('ingredients');
+        $user_id = $request->input('user_id');
+        $method = $request->input('method');
+        $file = $request->file('file');
+
+        $response = new \stdClass();
+
+        if($file == null)
+        {
+            $response->msg = "Fail";
+        }        
+        else
+        {
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path().'/img/publicaciones/',  $fileName);
+
+            $post = new Post();
+            $post->title = $title;
+            $post->description = $description;
+            $post->ingredients = $ingredients;
+            $post->method = $method;
+            $post->image = $fileName;
+            $post->user_id = $user_id;
+            $post->category_id = 1;
+            $post->save();
+            
+            $response->msg = "Success";
+            $response->post = $post;            
+        }        
+
+        return response()->json( $response );
     }
 
     // GET 

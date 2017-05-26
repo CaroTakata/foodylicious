@@ -16,6 +16,10 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid #333333;
 }
 
+.hidden {
+    display: none;
+}
+
 .navbar li {
   color: #333333;
 }

@@ -58,7 +58,7 @@ class UserController extends Controller
             $response->user = $user;            
         }        
 
-        return response()->json( $user );
+        return response()->json( $response );
     }
    
     // PUT/PATCH 
