@@ -34,17 +34,30 @@ class UserController extends Controller
         $password = Hash::make($password);
         $name = $request->input('name');
         $gender = $request->input('gender');
-        // $avatar = $request->input('avatar');
+        $file = $request->file('file');
 
-        $user = new User();        
-        $user->email    = $email;
-        $user->password = $password;
-        $user->name     = $name;
-        $user->gender   = $gender;
-        // $user->avatar   = $avatar;
-        $user->save();
+        $response = new \stdClass();
 
-        //return view('home');
+        if($file == null)
+        {
+            $response->msg = "Fail";
+        }        
+        else
+        {
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path().'/images/',  $fileName);
+            $user = new User();        
+            $user->email    = $email;
+            $user->password = $password;
+            $user->name     = $name;
+            $user->gender   = $gender;
+            $user->avatar   = $fileName;
+            $user->save();
+            
+            $response->msg = "Success";
+            $response->user = $user;            
+        }        
+
         return response()->json( $user );
     }
    
