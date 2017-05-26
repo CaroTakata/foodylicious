@@ -4,10 +4,22 @@ angular.module('myApp')
     }])
     .controller('postController', ['$scope', '$http', function ($scope, $http) {
         $scope.posts;
+        $scope.usuario = JSON.parse(localStorage.usuario);
+
         $http.get("api/post").then(function (response) {
             $scope.posts = response.data;
             console.log(response.data);
         })
+
+        $scope.usuarioClick = function () {
+            console.log("usuarioClick");
+            window.location.href = "#perfil";
+        };
+
+        $scope.masInformacionClick = function () {
+            console.log("masInformacionClick");
+            window.location.href = "#publicacion";
+        }
     }])
     .controller('headerController', ['$scope', function ($scope, $rootScope) {
         $scope.buscarClick = function () {

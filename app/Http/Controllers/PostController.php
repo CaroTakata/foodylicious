@@ -79,6 +79,7 @@ class PostController extends Controller
         $post->comments = $post->comments()->get();        
         $user = $post->user()->get()->first();
         $post->userName = $user->name;
+        $post->user_id = $user->id;
         $post->avatar = $user->avatar;
         $post->likes = $post->likes()->count();        
 
