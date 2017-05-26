@@ -4,8 +4,8 @@
             <div class="profile-content">
                 <center>
                     <div class="col-md-12">
-                        <img class="center-block imgPost2 img-responsive changecursor" ng-src="/img/usuarios/{{usuario.avatar}}" id="editarPImagen1" />
-
+                        <img class="center-block imgPost2 img-responsive changecursor" ng-src="/img/usuarios/{{usuario.avatar}}" id="editarPImagen1"
+                        />
                         <input type="file" name="editarPImagen2" id="editarPImagen" class="editarPImagen" />
                         <label for="editarPImagen">Choose a file</label>
                     </div>
@@ -18,13 +18,23 @@
                             <input type="text" class="editarPCorreo" value="{{ usuario.email }}" />
                             <br>
                             <label class="lblEditarP">Fecha de nacimiento:</label>
-                            <input type="date" class="editarPDate" />
+                            <input type="date" class="editarPDate" value="{{ usuario.birthdate }}" />
                             <br>
                             <label class="lblEditarP">Género:</label>
-                            <select form="sign-up-form" class="form-control" id="editarPGenero">
-                                <option value="Masculino" class="form-control">Masculino</option>
-                                <option value="Femenino" class="form-control" selected>Femenino</option>
-                            </select>
+                            <div ng-if="usuario.gender == 1">
+                                <select form="sign-up-form" class="form-control" id="editarPGenero">
+                                    <option value="0" disabled hidden>Género</option>
+                                    <option value="1" selected class="form-control">Masculino</option>
+                                    <option value="2" class="form-control">Femenino</option>
+                                </select>
+                            </div>
+                            <div ng-if="usuario.gender == 2">
+                                <select form="sign-up-form" class="form-control" id="editarPGenero">
+                                    <option value="0" disabled hidden>Género</option>
+                                    <option value="1" class="form-control">Masculino</option>
+                                    <option value="2" selected class="form-control">Femenino</option>
+                                </select>
+                            </div>
                             <a href="#home"><input type="button" class="editarButtonsCancelar" value="Cancelar"/></a>
                             <input type="submit" class="editarButtonsGuardarCambios" value="Guardar cambios" />
                         </form>

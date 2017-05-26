@@ -57,6 +57,7 @@ app
             var email = $("#signupemail").val();
             var password = $("#signuppassword").val();
             var gender = $("#signupgenero option:selected").val();
+            var birthdate = $("#signup-label-birthdate").val();
 
             Upload.upload({
                 url: 'http://localhost:8000/api/user',
@@ -65,6 +66,7 @@ app
                     'email': email,
                     'password': password,
                     'gender': gender,
+                    'birthdate': birthdate,
                     'file': file
                 }
             }).then(function (response) {

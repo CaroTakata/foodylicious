@@ -35,6 +35,7 @@ class UserController extends Controller
         $name = $request->input('name');
         $gender = $request->input('gender');
         $file = $request->file('file');
+        $birthdate = $request->input('birthdate');
 
         $response = new \stdClass();
 
@@ -47,11 +48,12 @@ class UserController extends Controller
             $fileName = $file->getClientOriginalName();
             $file->move(public_path().'/img/usuarios/',  $fileName);
             $user = new User();        
-            $user->email    = $email;
-            $user->password = $password;
-            $user->name     = $name;
-            $user->gender   = $gender;
-            $user->avatar   = $fileName;
+            $user->email     = $email;
+            $user->password  = $password;
+            $user->name      = $name;
+            $user->gender    = $gender;
+            $user->avatar    = $fileName;
+            $user->birthdate = $birthdate;
             $user->save();
             
             $response->msg = "Success";

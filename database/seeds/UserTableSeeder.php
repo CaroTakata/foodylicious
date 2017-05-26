@@ -20,7 +20,7 @@ class UserTableSeeder extends Seeder
         $users = array(
                 ['name' => 'Fernando Cantú', 'email' => 'fernandoc@gmail.com', 'password' => Hash::make('secret'), 'gender' => '1', 'avatar' => 'apple.jpg'],
                 ['name' => 'Christina Sevilleja', 'email' => 'christinas@gmail.com', 'password' => Hash::make('secret'), 'gender' => '2', 'avatar' => 'chefsito.jpg'],
-                ['name' => 'Omar Ríos', 'email' => 'omarr@gmail.com', 'password' => Hash::make('secret'), 'gender' => '1'. 'avatar' => 'garfield.jpg'],
+                ['name' => 'Omar Ríos', 'email' => 'omarr@gmail.com', 'password' => Hash::make('secret'), 'gender' => '1', 'avatar' => 'garfield.jpg'],
                 ['name' => 'Iván López', 'email' => 'ivanl@hotmail.com', 'password' => Hash::make('secret'), 'gender' => '1', 'avatar' => 'gordon.jpg'],
         );
             

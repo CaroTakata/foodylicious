@@ -56,7 +56,7 @@ angular.module('myApp')
     .controller('editarPerfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
 
         $scope.usuario = JSON.parse(localStorage.usuario);
-        
+        console.log($scope.usuario);
     }])
     .controller('newPostController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.buscarClick = function () {
