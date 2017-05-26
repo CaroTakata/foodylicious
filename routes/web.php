@@ -11,7 +11,6 @@
 |
 */
 
-use App\User;
 use App\Category;
 use App\Classes\JWT;
 
@@ -21,11 +20,17 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api'], function ()
 {
-    // Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
-    // Route::resource('photo', 'PhotoController', ['except' => [
-    //     'create', 'store', 'update', 'destroy'
-    // ]]);
-    Route::resource('post', 'PostController', ['except' => ['create', 'edit', 'destroy']]);
+    // Login - Registro
+    Route::post('/login', 'AuthController@login');
+
+    // Publicaciones
+    Route::resource('/post', 'PostController', ['except' => ['create', 'edit', 'destroy']]);
+    
+    // Usuarios
+    Route::resource('/user', 'UserController', ['only' => ['store', 'update']]);
+    Route::delete('/user', 'UserController@destroy');
+    Route::post('/user/{id}', 'UserController@show');
+    Route::get('/user/{id}', 'UserController@index');
 });
 
 Route::get('/home', function () {

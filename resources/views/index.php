@@ -46,8 +46,6 @@
 
     <!-- Bootstrap JS -->
     <script src="assets/js/bootstrap.js"></script>
-    <!-- All JS plugin Triggers -->
-    <script src="assets/js/main.js"></script>
     <!-- JS Validaciones -->
     <script src="assets/js/validaciones-signup.js"></script>
     <script src="assets/js/validaciones-signin.js"></script>
@@ -57,29 +55,8 @@
     <script src="assets/js/angular.min.js"></script>
     <!-- AngularJS Route -->
     <script src="assets/js/angular-route.min.js"></script>
-    
-
-    <script>
-        var app = angular.module("myApp", ["ngRoute"]);
-        app.config(function ($routeProvider) {
-            $routeProvider
-                .when("/", {
-                    templateUrl: "templates/main.html"
-                })
-                .when("/sign-up", {
-                    templateUrl: "templates/sign-up.html"
-                })
-                .when("/sign-in", {
-                    templateUrl: "templates/sign-in.html"
-                });
-        });
-        app.run(['$rootScope', function ($rootScope) {
-            $rootScope.$on('$routeChangeSuccess', function (next, current) {
-                console.log("TESTING");
-            });
-        }]);
-        
-    </script>
+    <!-- Custom Javascript -->
+    <script src="assets/js/main.js"></script>    
 
 </body>
 

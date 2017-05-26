@@ -1,4 +1,4 @@
-<section id="sign-up-area">
+<section id="sign-up-area" ng-controller="registerController">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -32,7 +32,7 @@
                         <label for="signupavatar">Choose a file</label>
 
                         <input type="submit" class="sign-up-button btn btn-border btn-lg col-md-offset-3 col-md-6 col-md-offset-3 animated fadeInUp"
-                            href="sign-in.html" value="Regístrate">
+                            ng-click="submitClick()" value="Regístrate">
                     </div>
                 </form>
             </div>

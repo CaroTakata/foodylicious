@@ -1,6 +1,6 @@
 angular.module('myApp')
     .controller('mainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-
+        $rootScope.usuario = JSON.parse(localStorage.usuario);        
     }])
     .controller('postController', ['$scope', '$http', function ($scope, $http) {
         $scope.posts;
