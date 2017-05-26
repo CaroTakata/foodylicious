@@ -492,18 +492,14 @@ footer{
 
 
 .divBotonNuevaReceta{
-    
     display: block;
     position: absolute;
-    right: 0px;
-    
+    right: 40px;
 }
 
 #botonNuevaReceta{
     z-index: 1;
-    right: 0px;
-    display: block;
-    width: 90%;
+    width: 50%;
     
     background-color: none;
     border-radius: 5px;
