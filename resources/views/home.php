@@ -71,10 +71,10 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-  <!-- AngularJS Core -->
+  <!-- AngularJS -->
   <script src="assets/js/angular.min.js"></script>
-  <!-- AngularJS Route -->
-  <script src="assets/js/angular-route.min.js"></script>
+  <script src="assets/js/angular-route.min.js"></script>  
+  <script src="assets/js/ng-file-upload.min.js"></script>
 
   <!-- APP JS -->
   <script src="assets/js/app.js"></script>

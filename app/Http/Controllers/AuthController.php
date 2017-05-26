@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use Hash;
 use App\User;
 
 class AuthController extends Controller
@@ -12,28 +12,27 @@ class AuthController extends Controller
     {
         $email = $request->input('email');
         $password = $request->input('password');
-        $password = Hash::make($password);
-        
+                
         $result = new \stdClass();
+        $result->user = new \stdClass();
+        $result->user = User::where('email', $email)->first();
 
-        if (Hash::check('secret', $password))
-        {
-            $result->user = new \stdClass();
-            $result->user = User::where('email', $email)->first();
-
-            if ($result->user == null) 
-            {
-                $result->msg = "Fail";
-            } 
-            else
-            {
-                $result->msg = "Success";
-            }
-        } 
-        else 
+        if ($result->user == null) 
         {
             $result->msg = "Fail";
-        }
+        } 
+        else
+        {
+            if (Hash::check($password, $result->user->password))
+            {
+                $result->msg = "Success";
+            } 
+            else 
+            {
+                $result->msg = "Fail";
+                $result->user = null;
+            }
+        }        
 
         return response()->json( $result );
     }
