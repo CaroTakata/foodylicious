@@ -358,6 +358,19 @@ footer{
     color:white;
 }
 
+.postCrossMi{
+    left: 0px;
+    color: white;
+}
+
+.postEditarMi{
+    left:70px;
+    font-size: 18px;
+    padding-top: 2px;
+    text-decoration: none;
+    color:white;
+}
+
 .postEditar{
     position: absolute;
     right:70px;
