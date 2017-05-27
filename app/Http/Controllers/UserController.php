@@ -13,7 +13,14 @@ class UserController extends Controller
     // Muestra todos los usuarios que sigue cierto usuario
     public function index($id)
     {
-        return "UserController@index";
+        $user = User::find($id);
+        
+        $response = new \stdClass();
+        $response->msg = "Success";
+        $response->user = $user;
+        $response->post = $user->posts()->get(); 
+
+        return response()->json( $response );
     }
 
     // POST 

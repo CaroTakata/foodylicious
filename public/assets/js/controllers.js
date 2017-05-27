@@ -2,6 +2,38 @@ angular.module('myApp')
     .controller('mainController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 
     }])
+    .controller('headerController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+        $scope.buscarClick = function () {
+            $("#homeFiltros").slideDown(800);
+        };
+    }])
+    .controller('sidebarController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+        $rootScope.usuario = JSON.parse(localStorage.usuario);
+
+        console.log($scope.usuario);
+
+        $scope.buscarClick = function () {
+            $("#homeFiltros").slideDown(800);
+        };
+
+    }])
+    .controller('perfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+
+        $scope.usuario = JSON.parse(localStorage.usuario);
+        $id = $scope.usuario.id;
+
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/post/' + $id
+        }).then(function successCallback(response) {
+            $scope.usuario = response.data;
+            console.log(response.data);
+        }, function errorCallback(response) {
+            console.log(response.data);
+            alert("Ocurrió un error inesperado");
+        });
+
+    }])
     .controller('postController', ['$scope', '$http', function ($scope, $http) {
         $scope.posts;
         $scope.usuario = JSON.parse(localStorage.usuario);
@@ -11,9 +43,25 @@ angular.module('myApp')
             console.log(response.data);
         })
 
-        $scope.usuarioClick = function () {
-            console.log("usuarioClick");
-            window.location.href = "#perfil";
+        $scope.usuarioClick = function (user_id) {
+
+            $http({
+                method: 'GET',
+                url: 'http://localhost:8000/api/user/' + user_id
+            }).then(function successCallback(response) {
+                var data = response.data;
+
+                if (data.msg == "Success") {
+                    localStorage.otroUsuario = JSON.stringify(data.user);
+                    localStorage.otroUsuarioPublicaciones = JSON.stringify(data.post);
+                    window.location.href = "#perfil";
+                } else {
+                    console.log(data);
+                }
+            }, function errorCallback(response) {
+                console.log(response.data);
+            });
+
         };
 
         $scope.masInformacionClick = function () {
@@ -23,7 +71,7 @@ angular.module('myApp')
 
         $scope.eliminarClick = function (post) {
             var post = post;
-            
+
             $http({
                 method: 'DELETE',
                 url: 'http://localhost:8000/api/post',
@@ -56,37 +104,9 @@ angular.module('myApp')
             window.location.href = "#/editar-publicacion";
         }
     }])
-    .controller('headerController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-        $scope.buscarClick = function () {
-            $("#homeFiltros").slideDown(800);
-        };
-    }])
-    .controller('sidebarController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-        $rootScope.usuario = JSON.parse(localStorage.usuario);
-
-        console.log($scope.usuario);
-
-        $scope.buscarClick = function () {
-            $("#homeFiltros").slideDown(800);
-        };
-
-    }])
-    .controller('perfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-
-        $scope.usuario = JSON.parse(localStorage.usuario);
-        $id = $scope.usuario.id;
-
-        $http({
-            method: 'GET',
-            url: 'http://localhost:8000/api/post/' + $id
-        }).then(function successCallback(response) {
-            $scope.usuario = response.data;
-            console.log(response.data);
-        }, function errorCallback(response) {
-            console.log(response.data);
-            alert("Ocurrió un error inesperado");
-        });
-
+    .controller('otroPerfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+        $scope.usuario = JSON.parse(localStorage.otroUsuario);
+        $scope.posts = JSON.parse(localStorage.otroUsuarioPublicaciones);
     }])
     .controller('editarPerfilController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.usuario = JSON.parse(localStorage.usuario);

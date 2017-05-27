@@ -1,178 +1,45 @@
-<section>
-<div class="col-md-8 ">
-            <div class="row verprofile-content">
-                <div>
-                    <div class="col-md-6">
-                        <img class="perfilImage img-responsive" src="assets/img/users/otter.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="perfilTitle">Alan Martínez</p>
-                        <hr class="separadorPosts">
-                    </div>   
+<section ng-controller="otroPerfilController">
+    <div class="col-md-8 ">
+        <div class="row verprofile-content">
+            <div>
+                <div class="col-md-6">
+                    <img class="perfilImage img-responsive" ng-src="img/usuarios/{{usuario.avatar}}" />
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-12">
-                        <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-                    
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <img class="homeImgPost img-responsive" src="assets/img/posts/food3.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="homeTitle">Tortitas de papa y queso</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                                <p class="homeUsersname">Alan Martínez</p>
-                        <p class="homeDescription">
-                            Deliciosas tortitas empanizadas, rellenas de papa y queso, así como también especias que 
-                        le dan un sabor único.
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12 homeDatePost">
-                        <p class="">Fecha 4/13/2017</p>
-                    </div>
-                    
-                    <div class="col-md-12 homeMoreInformation">  
-                        <a href="#" class="homeMoreInformationLink">Más información</a>
-                    </div>
+                <div class="col-md-6 homeText">
+                    <p class="perfilTitle">{{ usuario.name }}</p>
+                    <hr class="separadorPosts">
                 </div>
             </div>
-
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-12">
-                        <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-                    
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <img class="homeImgPost img-responsive" src="assets/img/posts/food1.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="homeTitle">Pollo agridulce con especias</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                                <p class="homeUsersname">Alan Martínez</p>
-                        <p class="homeDescription">
-                            Tiras o trozos de pollo de carne blanca rebozadas y fritas. 
-                         Suele servirse con salsa agridulce, a veces acompañado de piña, pimiento verde o cereza.  
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12 homeDatePost">
-                        <p class="">Fecha 4/13/2017</p>
-                    </div>
-                    
-                    <div class="col-md-12 homeMoreInformation">  
-                        <a href="#" class="homeMoreInformationLink">Más información</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-12">
-                        <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-                    
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <img class="homeImgPost img-responsive" src="assets/img/posts/food2.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="homeTitle">Sandwich de pavo</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                                <p class="homeUsersname">Alan Martínez</p>
-                        <p class="homeDescription">
-                            Un sandwich algo diferente. Hecho con pan integral, jamón y pechuga de pavo, queso amarillo derretido  
-                            y tomate.
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12 homeDatePost">
-                        <p class="">Fecha 4/13/2017</p>
-                    </div>
-                    
-                    <div class="col-md-12 homeMoreInformation">  
-                        <a href="#" class="homeMoreInformationLink">Más información</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-12">
-                        <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-                    
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <img class="homeImgPost img-responsive" src="assets/img/posts/food2.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="homeTitle">Sandwich de pavo</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                                <p class="homeUsersname">Alan Martínez</p>
-                        <p class="homeDescription">
-                            Un sandwich algo diferente. Hecho con pan integral, jamón y pechuga de pavo, queso amarillo derretido  
-                            y tomate.
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12 homeDatePost">
-                        <p class="">Fecha 4/13/2017</p>
-                    </div>
-                    
-                    <div class="col-md-12 homeMoreInformation">  
-                        <a href="#" class="homeMoreInformationLink">Más información</a>
-                    </div>
-                </div>
-            </div>
-
-            
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-12">
-                        <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
-                    
-                        
-                    </div>
-                    <div class="col-md-6">
-                        <img class="homeImgPost img-responsive" src="assets/img/posts/food2.jpg" />
-                    </div>
-                    
-                    <div class="col-md-6 homeText">
-                        <p class="homeTitle">Sandwich de pavo</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/otter.jpg"/> 
-                                <p class="homeUsersname">Alan Martínez</p>
-                        <p class="homeDescription">
-                            Un sandwich algo diferente. Hecho con pan integral, jamón y pechuga de pavo, queso amarillo derretido  
-                            y tomate.
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12 homeDatePost">
-                        <p class="">Fecha 4/13/2017</p>
-                    </div>
-                    
-                    <div class="col-md-12 homeMoreInformation">  
-                        <a href="#" class="homeMoreInformationLink">Más información</a>
-                    </div>
-                </div>
-            </div>
-        
         </div>
+
+        <div class="row" ng-repeat="post in post">
+            <div class="profile-content">
+                <div class="col-md-12">
+                    <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
+                </div>
+
+                <div class="col-md-6">
+                    <img class="homeImgPost img-responsive" ng-src="img/publicaciones/{{post.image}}" />
+                </div>
+
+                <div class="col-md-6 homeText">
+                    <p class="homeTitle">{{post.title}}</p>
+                    <hr class="separadorPosts">
+                    <img class="homeUsersIcon img-responsive" ng-src="img/usuarios/{{usuario.avatar}}" />
+                    <p class="homeUsersname">{{ usuario.name }}</p>
+                    <p class="homeDescription">{{post.description}} </p>
+                </div>
+
+                <div class="col-md-12 homeDatePost">
+                    <p class="">{{post.created_at}} </p>
+                </div>
+
+                <div class="col-md-12 homeMoreInformation">
+                    <a href="#" class="homeMoreInformationLink">Más información</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 </section>
