@@ -54,8 +54,6 @@ class PostController extends Controller
                 foreach ($liked as $like) {
                     if($like->id == $post->id){
                         $post->liked = true;
-                    } else {
-                        $post->liked = false;
                     }
                 }
             }
