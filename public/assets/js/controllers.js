@@ -22,6 +22,11 @@ angular.module('myApp')
         $scope.usuario = JSON.parse(localStorage.usuario);
         $id = $scope.usuario.id;
 
+        $scope.masInformacionClick = function (post) {
+            localStorage.publicacion = JSON.stringify(post);
+            window.location.href = "#publicacion";
+        }
+
         $http({
             method: 'GET',
             url: 'http://localhost:8000/api/post/' + $id
@@ -64,8 +69,8 @@ angular.module('myApp')
 
         };
 
-        $scope.masInformacionClick = function () {
-            console.log("masInformacionClick");
+        $scope.masInformacionClick = function (post) {
+            localStorage.publicacion = JSON.stringify(post);
             window.location.href = "#publicacion";
         }
 
@@ -107,9 +112,14 @@ angular.module('myApp')
     .controller('otroPerfilController', ['$scope', function ($scope) {
         $scope.usuario = JSON.parse(localStorage.otroUsuario);
         $scope.posts = JSON.parse(localStorage.otroUsuarioPublicaciones);
+        
+        $scope.masInformacionClick = function (post) {
+            localStorage.publicacion = JSON.stringify(post);
+            window.location.href = "#publicacion";
+        }
     }])
     .controller('masInformacionController', ['$scope', function ($scope) {
-        
+        $scope.post = JSON.parse(localStorage.publicacion);        
     }])
     .controller('editarPerfilController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.usuario = JSON.parse(localStorage.usuario);
