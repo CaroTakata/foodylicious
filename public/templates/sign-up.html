@@ -26,18 +26,21 @@
                             <option value="2" class="form-control">Femenino</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-offset-4 col-md-4 col-md-offset-4 animated fadeInDown">
+                    <div class="form-group col-md-offset-4 col-md-4 col-md-offset-4 animated fadeInDown" >
                         <!--<input type="file" name="signupavatar" id="signupavatar" class="signupavatar" />
                         <label for="signupavatar">Choose a file</label>-->
-                        <input id="picFile" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" title="Cambiar foto de perfil">
+                        <input id="picFile" type="file" ngf-select ng-model="picFile" name="file" accept="image/*" ngf-max-size="2MB" title="Elegir foto de perfil" class="signupavatar">
+                        <label for="picFile">Elegir foto de perfil</label>
                         <i ng-show="myForm.file.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
 
                         <!--<input type="submit" class="sign-up-button btn btn-border btn-lg col-md-offset-3 col-md-6 col-md-offset-3 animated fadeInUp"
                             ng-click="submitClick()" value="Regístrate">-->
                         <!--<input type="submit" class="sign-up-button btn btn-border btn-lg col-md-offset-3 col-md-6 col-md-offset-3 animated fadeInUp"
                             ng-click="submitClick()" value="Regístrate" ng-click="uploadPic(picFile)">-->
-
-                        <button ng-click="uploadPic(picFile)">Submit</button>
+                        <br>
+                        <br>
+                        <br>
+                        <button ng-click="uploadPic(picFile)"  id="botonRegistro">Registrar</button>
                     </div>
                 </form>
             </div>

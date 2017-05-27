@@ -277,11 +277,13 @@ body::-webkit-scrollbar-thumb {
     color: white;
     display: inline;
     padding-left: 5px;
+    cursor: pointer;
 }
 
 .homeUsername:hover{
     text-decoration: none;
     color: #F2743A;
+    cursor: pointer;
 }
 
 
@@ -313,11 +315,13 @@ body::-webkit-scrollbar-thumb {
 
 .homeMoreInformationLink, .editarPost{
     color: white;
+    cursor: pointer;
 }
 
 .homeMoreInformationLink:hover, .editarPost:hover{
     text-decoration: none;
     color: #F2743A;
+    cursor: pointer;
 }
 
 
