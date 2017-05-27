@@ -115,6 +115,18 @@ class PostController extends Controller
         return response()->json( $user );
     }
 
+    // GET 
+    // like/{post_id}
+    // Muestra una publicación en especifico
+    public function all_likes($id)
+    {
+        $user = User::find($id);
+        $post = $user->likes()->get();
+        
+        return response()->json( $post );
+    }
+
+
     // POST 
     // like/{post_id}
     // Muestra una publicación en especifico

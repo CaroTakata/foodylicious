@@ -148,6 +148,20 @@ angular.module('myApp')
             window.location.href = "#publicacion";
         }
     }])
+    .controller('favoritosController', ['$scope', '$http', function ($scope, $http) {
+        $scope.usuario = JSON.parse(localStorage.usuario);
+        $scope.posts;
+
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/api/like/' + $scope.usuario.id
+        }).then(function successCallback(response) {
+            $scope.posts = response.data;
+            console.log(response.data);
+        }, function errorCallback(response) {
+            console.log(response.data);
+        });
+    }])
     .controller('masInformacionController', ['$scope', function ($scope) {
         $scope.post = JSON.parse(localStorage.publicacion);
     }])

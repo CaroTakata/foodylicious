@@ -37,6 +37,7 @@ Route::group(['prefix' => 'api'], function ()
     // Likes
     Route::post('/post/{id}', 'PostController@all_post');
     Route::post('/like/{id}', 'PostController@like');
+    Route::get('/like/{id}', 'PostController@all_likes');
 });
 
 Route::get('/home', function () {
