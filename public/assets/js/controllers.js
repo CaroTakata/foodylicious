@@ -104,9 +104,12 @@ angular.module('myApp')
             window.location.href = "#/editar-publicacion";
         }
     }])
-    .controller('otroPerfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
+    .controller('otroPerfilController', ['$scope', function ($scope) {
         $scope.usuario = JSON.parse(localStorage.otroUsuario);
         $scope.posts = JSON.parse(localStorage.otroUsuarioPublicaciones);
+    }])
+    .controller('masInformacionController', ['$scope', function ($scope) {
+        
     }])
     .controller('editarPerfilController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.usuario = JSON.parse(localStorage.usuario);

@@ -1,67 +1,67 @@
-<section>
-<div class="col-md-8 postBackground1">
-            <div class="row">
-                <div class="profile-content">
-                    <div class="col-md-6">
-                        <a href="#" ><i class="fa fa-heart-o fa-2x"></i></a>
-                     </div>
-                    <div class="col-md-12">
-                            <img class="center-block imgPost img-responsive " src="assets/img/posts/food3.jpg" />
-                       
-                    </div>
-                    
-                    <div class="col-md-12 homeText">
-                        <p class="homeTitlePost">{{ post.title }}</p>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg"/> 
-                                    <p class="homeUsersname">{{ post.userName }}</p>
-                        <p class="homeDescription">
-                            {{ post.description }}
-                        </p>
-                        <p class="postIngredientes">
-                            Ingredientes: {{post.ingredients}}
-                        </p>
-                        <p class="postProcedimiento">
-                            Procedimiento: {{post.method}} 
-                        </p>
-                    </div>                        
-                    
-                    <div class="col-md-12">
-                        <p class="datePost">{{ post.created_at }}</p>
-                    </div>
-                    
-                    <div class="col-md-12 agregarComentario">
-                        <form>
-                            <p id="ComentariosPost">Comentarios</p>
-                            <center>
-                                <textarea class="form-control" cols="5" rows="5" id="comentarioTextarea" maxlength="250" placeholder="Escribe tu comentario"></textarea> 
-                            </center>
-                            <input type="submit" id="publicarComentario" value="Comentar"/>
-                        </form>
-                    </div>
-                    
-                    <div class="col-md-12">
-                        <div class="col-md-12 comentarioBlock">                            
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg"/> 
-                                <p class="homeUsersname">Carolina Avelar</p>    
-                                <p class="dateComentario">Fecha 4/13/2017 02:34pm</p>
-                                <p class="comentarioPublicado">¡Excelente receta! Me encantó</p>
-                        </div>
-                        
-                        <div class="col-md-12 comentariosBotones">
-                            <footer class="container-fluid text-center">    
-                                <a href="#" class="comentariosPageButtons">Anterior</a>
-                                <a href="#" class="comentariosPageButtons">Siguiente</a>
-                            <!-- <span class="glyphicon glyphicon-chevron-up"></span> -->  
-                            </footer>
-                        </div>
-                     </div>   
-                        
+<section ng-controller="masInformacionController">
+    <div class="col-md-8 postBackground1">
+        <div class="row">
+            <div class="profile-content">
+                <div class="col-md-6">
+                    <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
                 </div>
-            </div>
-      
-            
-            
+                <div class="col-md-12">
+                    <img class="center-block imgPost img-responsive " src="assets/img/posts/food3.jpg" />
 
+                </div>
+
+                <div class="col-md-12 homeText">
+                    <p class="homeTitlePost">{{ post.title }}</p>
+                    <hr class="separadorPosts">
+                    <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg" />
+                    <p class="homeUsersname">{{ post.userName }}</p>
+                    <p class="homeDescription">
+                        {{ post.description }}
+                    </p>
+                    <p class="postIngredientes">
+                        Ingredientes: {{post.ingredients}}
+                    </p>
+                    <p class="postProcedimiento">
+                        Procedimiento: {{post.method}}
+                    </p>
+                </div>
+
+                <div class="col-md-12">
+                    <p class="datePost">{{ post.created_at }}</p>
+                </div>
+
+                <div class="col-md-12 agregarComentario">
+                    <form>
+                        <p id="ComentariosPost">Comentarios</p>
+                        <center>
+                            <textarea class="form-control" cols="5" rows="5" id="comentarioTextarea" maxlength="250" placeholder="Escribe tu comentario"></textarea>
+                        </center>
+                        <input type="submit" id="publicarComentario" value="Comentar" />
+                    </form>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="col-md-12 comentarioBlock">
+                        <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg" />
+                        <p class="homeUsersname">Carolina Avelar</p>
+                        <p class="dateComentario">Fecha 4/13/2017 02:34pm</p>
+                        <p class="comentarioPublicado">¡Excelente receta! Me encantó</p>
+                    </div>
+
+                    <div class="col-md-12 comentariosBotones">
+                        <footer class="container-fluid text-center">
+                            <a href="#" class="comentariosPageButtons">Anterior</a>
+                            <a href="#" class="comentariosPageButtons">Siguiente</a>
+                            <!-- <span class="glyphicon glyphicon-chevron-up"></span> -->
+                        </footer>
+                    </div>
+                </div>
+
+            </div>
         </div>
+
+
+
+
+    </div>
 </section>
