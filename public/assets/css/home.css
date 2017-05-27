@@ -365,6 +365,7 @@ footer{
 .postCrossMi{
     left: 0px;
     color: white;
+    cursor: pointer;
 }
 
 .postEditarMi{
@@ -373,6 +374,7 @@ footer{
     padding-top: 2px;
     text-decoration: none;
     color:white;
+    cursor: pointer;
 }
 
 .postEditar{
@@ -415,20 +417,27 @@ footer{
 .postProcedimiento{
     text-align: center;
     margin-top: 40px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     width: auto;
 }
 
 
 
 .postBackground{
-    height: auto;
+    height: 640px;
     background-color: #333333;
     opacity: 0.98;
     padding-top: 0px;
     padding-bottom: 25px;
 }
 
+.postBackground1{
+    height: auto;
+    background-color: #333333;
+    opacity: 0.98;
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
 
 
 .agregarComentario{
