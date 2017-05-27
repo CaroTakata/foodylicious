@@ -121,7 +121,7 @@ class PostController extends Controller
     public function all_likes($id)
     {
         $user = User::find($id);
-        $post = $user->likes()->get();
+        $post = $user->likes()->distinct()->get();
         
         return response()->json( $post );
     }
