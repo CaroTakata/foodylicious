@@ -4,7 +4,7 @@ angular.module('myApp')
     }])
     .controller('headerController', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $scope.buscarClick = function () {
-            $("#homeFiltros").slideDown(800);
+            $("#homeFiltros").slideToggle(800);
         };
     }])
     .controller('sidebarController', ['$scope', '$rootScope', function ($scope, $rootScope) {
@@ -13,7 +13,7 @@ angular.module('myApp')
         console.log($scope.usuario);
 
         $scope.buscarClick = function () {
-            $("#homeFiltros").slideDown(800);
+            $("#homeFiltros").slideToggle(800);
         };
 
     }])
