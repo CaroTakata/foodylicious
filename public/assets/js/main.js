@@ -40,11 +40,11 @@ app
                 }
                 else {
                     console.log(response.data);
-                    alert("Tu correo o contraseña son incorrectos");
+                    $(".title-big").notify("Oops! Tu correo o contraseña son incorrectos", "error");
                 }
             }, function errorCallback(response) {
                 console.log(response);
-                alert("Tu correo o contraseña son incorrectos");
+                $(".title-big").notify("Oops! Tu correo o contraseña son incorrectos", "error");
             });
         }
     }])
