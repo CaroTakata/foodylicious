@@ -535,3 +535,10 @@ footer{
     right: 30px;
     display: block;
 }
+
+.like{
+    cursor: pointer;
+}
+.like:hover{
+    cursor: pointer;
+}
