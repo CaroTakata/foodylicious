@@ -13,7 +13,7 @@ class PostController extends Controller
     // Muestra todas las publicaciones
     public function index()
     {
-        $posts = Post::all();    
+        $posts = Post::all();
 
         $posts->each(function ($post) {
             $category = $post->category()->get()->first();
@@ -22,8 +22,44 @@ class PostController extends Controller
             $user = $post->user()->get()->first();
             $post->userName = $user->name;
             $post->avatar = $user->avatar;
-            $post->likes = $post->likes()->count();        
+            $post->likes = $post->likes()->count();
         });
+
+        return response()->json( $posts );
+    }
+
+    // POST 
+    // post/{id}
+    // Muestra todas las publicaciones
+    public function all_post($id)
+    {
+        $posts = Post::all();
+        $user = User::find($id);
+        $liked = $user->likes()->get();
+        $count = 0;
+
+        foreach ($posts as $post) {
+            $count = $count + 1;
+            $category = $post->category()->get()->first();
+            $post->category = $category->name;
+            $post->comments = $post->comments()->get();        
+            $user = $post->user()->get()->first();
+            $post->userName = $user->name;
+            $post->avatar = $user->avatar;
+            $post->likes = $post->likes()->count();        
+            $post->liked = false;
+
+            if($post->likes > 0)
+            {
+                foreach ($liked as $like) {
+                    if($like->id == $post->id){
+                        $post->liked = true;
+                    } else {
+                        $post->liked = false;
+                    }
+                }
+            }
+        }
 
         return response()->json( $posts );
     }

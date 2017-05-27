@@ -35,6 +35,7 @@ Route::group(['prefix' => 'api'], function ()
     Route::post('/user/{id}', 'UserController@update_profile');
 
     // Likes
+    Route::post('/post/{id}', 'PostController@all_post');
     Route::post('/like/{id}', 'PostController@like');
 });
 

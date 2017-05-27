@@ -43,12 +43,24 @@ angular.module('myApp')
         $scope.posts;
         $scope.usuario = JSON.parse(localStorage.usuario);
 
-        $http.get("api/post").then(function (response) {
+        // $http.get("api/post").then(function (response) {
+        //     $scope.posts = response.data;
+        //     console.log(response.data);
+        // })
+
+        $http({
+            method: 'POST',
+            url: 'http://localhost:8000/api/post/' + $scope.usuario.id
+        }).then(function successCallback(response) {
             $scope.posts = response.data;
             console.log(response.data);
-        })
+        }, function errorCallback(response) {
+            console.log(response.data);
+        });
 
-        $scope.favoritosClick = function (post) {
+        $scope.favoritosClick = function ($event, post) {
+
+            var elemento = $event.currentTarget;
 
             $http({
                 method: 'POST',
@@ -58,6 +70,8 @@ angular.module('myApp')
                 }
             }).then(function successCallback(response) {
                 var data = response.data;
+                $(elemento).find("a i").removeClass("fa-heart-o");
+                $(elemento).find("a i").addClass("fa-heart");
                 console.log(data);
             }, function errorCallback(response) {
                 console.log(response.data);
