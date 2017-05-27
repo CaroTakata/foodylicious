@@ -107,8 +107,15 @@ class PostController extends Controller
     // DELETE
     // post/{post_id}
     // Elimina una publicación
-    public function destroy(Request $request)
+    public function delete_post(Request $request)
     {
-        return "Post destroy";
+        $id = $request->input('id');
+        $post = Post::find($id);
+        $post->delete();
+
+        $response = new \stdClass();        
+        $response->msg = "Success";
+        
+        return response()->json( $response );
     }
 }

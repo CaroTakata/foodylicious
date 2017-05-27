@@ -25,7 +25,7 @@ Route::group(['prefix' => 'api'], function ()
 
     // Publicaciones
     Route::resource('/post', 'PostController', ['except' => ['create', 'edit', 'destroy']]);
-    Route::delete('/post', 'PostController@destroy');
+    Route::delete('/post', 'PostController@delete_post');
         
     // Usuarios
     Route::resource('/user', 'UserController', ['only' => ['store', 'update']]);

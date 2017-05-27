@@ -22,8 +22,33 @@ angular.module('myApp')
         }
 
         $scope.eliminarClick = function (post) {
+            var post = post;
+            
+            $http({
+                method: 'DELETE',
+                url: 'http://localhost:8000/api/post',
+                data: {
+                    'id': post.id,
+                },
+                headers: {
+                    'Content-type': 'application/json;'
+                }
+            }).then(function successCallback(response) {
+                var data = response.data;
 
-            console.log("Eliminar Click");
+                if (data.msg = "Success") {
+                    var index = $scope.posts.indexOf(post);
+
+                    if (index > -1) {
+                        $scope.posts.splice(index, 1);
+                    }
+                }
+                else {
+                    console.log(response.data);
+                }
+            }, function errorCallback(response) {
+                console.log(response.data);
+            });
         }
 
         $scope.editarClick = function (post) {
@@ -133,7 +158,7 @@ angular.module('myApp')
                     'title': title,
                     'description': description,
                     'ingredients': ingredients,
-                    'method': method        
+                    'method': method
                 }
             }).then(function successCallback(response) {
                 console.log(response.data);
