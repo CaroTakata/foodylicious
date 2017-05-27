@@ -90,7 +90,7 @@ class PostController extends Controller
     // DELETE
     // post/{post_id}
     // Elimina una publicación
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         return "Post destroy";
     }

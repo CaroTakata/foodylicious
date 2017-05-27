@@ -25,12 +25,14 @@ Route::group(['prefix' => 'api'], function ()
 
     // Publicaciones
     Route::resource('/post', 'PostController', ['except' => ['create', 'edit', 'destroy']]);
+    Route::delete('/post', 'PostController@destroy');
         
     // Usuarios
     Route::resource('/user', 'UserController', ['only' => ['store', 'update']]);
     Route::delete('/user', 'UserController@destroy');
     Route::post('/user/{id}', 'UserController@show');
     Route::get('/user/{id}', 'UserController@index');
+    Route::post('/user/{id}', 'UserController@update_profile');
 });
 
 Route::get('/home', function () {

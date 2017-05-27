@@ -20,14 +20,22 @@ angular.module('myApp')
             console.log("masInformacionClick");
             window.location.href = "#publicacion";
         }
+
+        $scope.eliminarClick = function(post){
+            console.log("Eliminar Click");
+        }
+
+        $scope.editarClick = function(post){
+            console.log("Editar Click");
+        }
     }])
-    .controller('headerController', ['$scope', function ($scope, $rootScope) {
+    .controller('headerController', ['$scope','$rootScope', function ($scope, $rootScope) {
         $scope.buscarClick = function () {
             $("#homeFiltros").slideDown(800);
         };
     }])
-    .controller('sidebarController', ['$scope', function ($scope, $rootScope) {
-        $scope.usuario = JSON.parse(localStorage.usuario);
+    .controller('sidebarController', ['$scope','$rootScope', function ($scope, $rootScope) {
+        $rootScope.usuario = JSON.parse(localStorage.usuario);
 
         console.log($scope.usuario);
 
@@ -53,10 +61,57 @@ angular.module('myApp')
         });
 
     }])
-    .controller('editarPerfilController', ['$scope', '$http', '$rootScope', function ($scope, $http, $rootScope) {
-
+    .controller('editarPerfilController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.usuario = JSON.parse(localStorage.usuario);
-        console.log($scope.usuario);
+
+        $scope.submitClick = function (file) {
+
+            var name = $("#editarPNombre").val();
+            var email = $("#editarPCorreo").val();
+            var birthdate = $("#editarPDate").val();
+            var gender = $("#editarPGenero").val();
+
+            Upload.upload({
+                url: 'http://localhost:8000/api/user/' + $scope.usuario.id,
+                data: {
+                    'name': name,
+                    'email': email,
+                    'birthdate': birthdate,
+                    'gender': gender,
+                    'file': file
+                }
+            }).then(function (response) {
+                var data = response.data;
+                $scope.usuario = data.user;                
+                localStorage.usuario = JSON.stringify($scope.usuario);
+                $rootScope.usuario = $scope.usuario;
+
+                console.log(data);
+            }, function errorCallback(response) {
+                console.log(response.data);
+            });
+
+
+        }
+
+        $scope.onFileSelect = function (obj) {
+            var preview = document.querySelector('#editarPImagen1');
+            var file = document.querySelector('#editarPImagen').files[0];
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+                preview.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        }
+
+        $scope.imageClick = function () {
+            $("#editarPImagen").trigger("click");
+        }
+
     }])
     .controller('newPostController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.buscarClick = function () {

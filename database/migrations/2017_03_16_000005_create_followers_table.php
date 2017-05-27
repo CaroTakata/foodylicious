@@ -25,7 +25,9 @@ class CreateFollowersTable extends Migration
             $table->foreign('follow_id')->references('id')->on('users');
             
             //Primary key
-            $table->primary(['user_id','follow_id']);            
+            $table->primary(['user_id','follow_id']);         
+                    
+            $table->softDeletes();   
         });
     }
 

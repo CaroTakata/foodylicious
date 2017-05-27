@@ -5,20 +5,20 @@
                 <center>
                     <div class="col-md-12">
                         <img class="center-block imgPost2 img-responsive changecursor" ng-src="/img/usuarios/{{usuario.avatar}}" id="editarPImagen1"
-                        />
-                        <input type="file" name="editarPImagen2" id="editarPImagen" class="editarPImagen" />
+                            ng-click="imageClick()" />
+                        <input class="hidden" type="file" name="editarPImagen2" id="editarPImagen" class="editarPImagen" ng-model="picFile" ngf-select="onFileSelect($files)"/>                        
                         <label for="editarPImagen">Choose a file</label>
                     </div>
                     <div class="col-md-12 homeText">
                         <form class="editarText">
                             <label class="lblEditarP">Nombre:</label>
-                            <input type="text" class="editarPNombre" value="{{ usuario.name }}" />
+                            <input type="text" id="editarPNombre" class="editarPNombre" value="{{ usuario.name }}" />
                             <br>
                             <label class="lblEditarP">Correo electrónico:</label>
-                            <input type="text" class="editarPCorreo" value="{{ usuario.email }}" />
+                            <input type="text" id="editarPCorreo" class="editarPCorreo" value="{{ usuario.email }}" />
                             <br>
                             <label class="lblEditarP">Fecha de nacimiento:</label>
-                            <input type="date" class="editarPDate" value="{{ usuario.birthdate }}" />
+                            <input type="date" id="editarPDate" class="editarPDate" value="{{ usuario.birthdate }}" />
                             <br>
                             <label class="lblEditarP">Género:</label>
                             <div ng-if="usuario.gender == 1">
@@ -36,7 +36,7 @@
                                 </select>
                             </div>
                             <a href="#home"><input type="button" class="editarButtonsCancelar" value="Cancelar"/></a>
-                            <input type="submit" class="editarButtonsGuardarCambios" value="Guardar cambios" />
+                            <input type="submit" class="editarButtonsGuardarCambios" value="Guardar cambios" ng-click="submitClick(picFile)" />
                         </form>
                     </div>
                 </center>

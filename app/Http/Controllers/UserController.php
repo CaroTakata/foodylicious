@@ -67,8 +67,55 @@ class UserController extends Controller
     // user/{user_id}
     // Actualiza la informacion del usuario
     public function update(Request $request, $id)
+    {        
+        return "UserController@update";
+    }
+
+    // POST
+    // user/{user_id}
+    // Actualiza la informacion del usuario
+    public function update_profile(Request $request, $id)
     {
-        return "UserController@update";        
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $birthdate = $request->input('birthdate');
+        $gender = $request->input('gender');        
+        $file = $request->file('file');
+
+        $response = new \stdClass();
+        $user = User::find($id);
+
+        if($file == null)
+        {
+            $response->image = "No image";
+            $user->name         = $name;
+            $user->email        = $email;
+            $user->birthdate    = $birthdate;
+            $user->gender       = $gender;
+            $user->save();
+            
+            $response->msg = "Success";
+            $response->user = $user;     
+        }        
+        else
+        {
+            $response->msg = "Success";
+            $response->image = "Image";
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path().'/img/usuarios/',  $fileName);
+            
+            $user->name         = $name;
+            $user->email        = $email;
+            $user->birthdate    = $birthdate;
+            $user->gender       = $gender;
+            $user->avatar       = $file->getClientOriginalName();
+            $user->save();
+            
+            $response->msg = "Success";
+            $response->user = $user;     
+        }
+
+        return response()->json( $response );
     }
 
     // DELETE

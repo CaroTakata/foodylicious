@@ -14,7 +14,7 @@
             <div class="col-md-6 homeText">
                 <p class="homeTitle">{{ post.title }}</p>
                 <hr class="separadorPosts">
-                <div ng-click="usuarioClick()">
+                <div ng-click="usuarioClick(post.user_id)">
                     <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
                     <a class="homeUsersname">{{ post.userName }}</a>
                 </div>
@@ -36,8 +36,8 @@
 
         <div class="profile-content">
             <div class="col-md-12">
-                <a href="#home" class="postCrossMi"><i class="fa fa-times fa-2x"></i></a> &nbsp;
-                <a href="#editar-publicacion" class="postEditarMi">Editar</a>
+                <a href="#home" class="postCrossMi" ng-click="eliminarClick(post)"><i class="fa fa-times fa-2x"></i></a> &nbsp;
+                <a href="#editar-publicacion" class="postEditarMi" ng-click="editarClick(post)">Editar</a>
             </div>
 
             <div class="col-md-6">
@@ -47,8 +47,10 @@
             <div class="col-md-6 homeText">
                 <p class="homeTitle">{{ post.title }}</p>
                 <hr class="separadorPosts">
-                <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
-                <a href="verotroperfil.html" class="homeUsersname">{{ post.userName }}</a>
+                <div ng-click="usuarioClick(post.user_id)">
+                    <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
+                    <a class="homeUsersname">{{ post.userName }}</a>
+                </div>
                 <p class="homeDescription"> {{ post.description }} </p>
             </div>
 
