@@ -6,14 +6,14 @@
                     <a href="#"><i class="fa fa-heart-o fa-2x"></i></a>
                 </div>
                 <div class="col-md-12">
-                    <img class="center-block imgPost img-responsive " src="assets/img/posts/food3.jpg" />
+                    <img class="center-block imgPost img-responsive " ng-src="img/publicaciones/{{post.image}}" />
 
                 </div>
 
                 <div class="col-md-12 homeText">
                     <p class="homeTitlePost">{{ post.title }}</p>
                     <hr class="separadorPosts">
-                    <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg" />
+                    <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
                     <p class="homeUsersname">{{ post.userName }}</p>
                     <p class="homeDescription">
                         {{ post.description }}
@@ -52,7 +52,6 @@
                         <footer class="container-fluid text-center">
                             <a href="#" class="comentariosPageButtons">Anterior</a>
                             <a href="#" class="comentariosPageButtons">Siguiente</a>
-                            <!-- <span class="glyphicon glyphicon-chevron-up"></span> -->
                         </footer>
                     </div>
                 </div>
