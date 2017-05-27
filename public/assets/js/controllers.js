@@ -48,6 +48,22 @@ angular.module('myApp')
             console.log(response.data);
         })
 
+        $scope.favoritosClick = function (post) {
+
+            $http({
+                method: 'POST',
+                url: 'http://localhost:8000/api/like/' + post.id,
+                data: {
+                    'user_id': $scope.usuario.id
+                }
+            }).then(function successCallback(response) {
+                var data = response.data;
+                console.log(data);
+            }, function errorCallback(response) {
+                console.log(response.data);
+            });
+        }
+
         $scope.usuarioClick = function (user_id) {
 
             $http({
@@ -112,14 +128,14 @@ angular.module('myApp')
     .controller('otroPerfilController', ['$scope', function ($scope) {
         $scope.usuario = JSON.parse(localStorage.otroUsuario);
         $scope.posts = JSON.parse(localStorage.otroUsuarioPublicaciones);
-        
+
         $scope.masInformacionClick = function (post) {
             localStorage.publicacion = JSON.stringify(post);
             window.location.href = "#publicacion";
         }
     }])
     .controller('masInformacionController', ['$scope', function ($scope) {
-        $scope.post = JSON.parse(localStorage.publicacion);        
+        $scope.post = JSON.parse(localStorage.publicacion);
     }])
     .controller('editarPerfilController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.usuario = JSON.parse(localStorage.usuario);

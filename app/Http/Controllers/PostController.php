@@ -79,6 +79,22 @@ class PostController extends Controller
         return response()->json( $user );
     }
 
+    // POST 
+    // like/{post_id}
+    // Muestra una publicación en especifico
+    public function like(Request $request, $id)
+    {        
+        $post = Post::find($id);
+        $user_id = $request->input('user_id');
+        $post->likes()->attach($user_id);
+        $post->save();
+
+        $response = new \stdClass();
+        $response->msg = "Success";
+        
+        return response()->json( $response );
+    }
+
     // PUT/PATCH
     // post/{post_id}
     // Actualiza una publicación en especifico
