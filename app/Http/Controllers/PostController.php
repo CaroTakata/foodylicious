@@ -84,7 +84,24 @@ class PostController extends Controller
     // Actualiza una publicación en especifico
     public function update(Request $request, $id)
     {
-        return "Post update";
+        $post = Post::find($id);
+
+        $title = $request->input('title');
+        $description = $request->input('description');
+        $ingredients = $request->input('ingredients');
+        $method = $request->input('method');
+        
+        $post->title = $title;
+        $post->description = $description;
+        $post->ingredients = $ingredients;
+        $post->method = $method;
+        $post->save();
+        
+        $response = new \stdClass();        
+        $response->msg = "Success";        
+        $response->post = $post;
+        
+        return response()->json( $response );
     }
 
     // DELETE

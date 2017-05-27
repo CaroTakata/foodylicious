@@ -21,20 +21,22 @@ angular.module('myApp')
             window.location.href = "#publicacion";
         }
 
-        $scope.eliminarClick = function(post){
+        $scope.eliminarClick = function (post) {
+
             console.log("Eliminar Click");
         }
 
-        $scope.editarClick = function(post){
-            console.log("Editar Click");
+        $scope.editarClick = function (post) {
+            localStorage.post = JSON.stringify(post);
+            window.location.href = "#/editar-publicacion";
         }
     }])
-    .controller('headerController', ['$scope','$rootScope', function ($scope, $rootScope) {
+    .controller('headerController', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $scope.buscarClick = function () {
             $("#homeFiltros").slideDown(800);
         };
     }])
-    .controller('sidebarController', ['$scope','$rootScope', function ($scope, $rootScope) {
+    .controller('sidebarController', ['$scope', '$rootScope', function ($scope, $rootScope) {
         $rootScope.usuario = JSON.parse(localStorage.usuario);
 
         console.log($scope.usuario);
@@ -82,7 +84,7 @@ angular.module('myApp')
                 }
             }).then(function (response) {
                 var data = response.data;
-                $scope.usuario = data.user;                
+                $scope.usuario = data.user;
                 localStorage.usuario = JSON.stringify($scope.usuario);
                 $rootScope.usuario = $scope.usuario;
 
@@ -112,6 +114,33 @@ angular.module('myApp')
             $("#editarPImagen").trigger("click");
         }
 
+    }])
+    .controller('editarPostController', ['$scope', '$http', function ($scope, $http) {
+        $scope.post = JSON.parse(localStorage.post);
+
+
+        $scope.guardarClick = function () {
+            var title = $("#editarInputTitulo").val()
+            var description = $("#editarDescripcion").val();
+            var ingredients = $("#editarIngredientes").val();
+            var method = $("#editarProcedimiento").val();
+            var id = $scope.post.id;
+
+            $http({
+                method: 'PUT',
+                url: 'http://localhost:8000/api/post/' + id,
+                data: {
+                    'title': title,
+                    'description': description,
+                    'ingredients': ingredients,
+                    'method': method        
+                }
+            }).then(function successCallback(response) {
+                console.log(response.data);
+            }, function errorCallback(response) {
+                console.log(response.data);
+            });
+        }
     }])
     .controller('newPostController', ['$scope', '$http', '$rootScope', 'Upload', function ($scope, $http, $rootScope, Upload) {
         $scope.buscarClick = function () {

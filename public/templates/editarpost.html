@@ -1,40 +1,32 @@
-<section>
-<div class="col-md-8 postBackground">
-            <div class="row">
-                <div class="profile-content">
-                   
-                   
-                    <div class="col-md-12">
-                            <img class="center-block imgPost img-responsive " src="assets/img/posts/food3.jpg" />
-                    </div>
-                    
-                    <div class="col-md-12 homeText">
-                         <form class="editarText">
-                        <input type="text" class="editarInputTitulo" value="Tortitas de papa y queso"/>
-                        <hr class="separadorPosts">
-                                <img class="homeUsersIcon img-responsive" src="assets/img/users/kitten.jpg"/> 
-                                    <p class="homeUsersname">Carolina Avelar</p>
-                        <center>
-                        <textarea class="form-control" cols="5" rows="5" id="editarDescripcion" maxlength="250">Deliciosas tortitas empanizadas, rellenas de papa y queso, así como también especias que le dan un sabor único.</textarea>
-                        <textarea class="form-control" cols="5" rows="5" id="editarIngredientes" maxlength="250">Ingredientes: Harina para empanizar, 4 papas, 200 gramos de queso manchego, 1/2 taza de leche, 1 cucharada de mantequilla, 1 huevo, sal y pimienta.</textarea>
-                        <textarea class="form-control" cols="5" rows="5" id="editarProcedimiento" maxlength="250">Procedimiento: Aplastar las papas hasta que no se vean trozos grandes de papa. Tomamos un recipiente y quebramos el huevo (retiramos la cáscara), agregamos la 1/2 taza de leche y mezclamos. Con nuestras manos hacemos bolitas o tortitas con la masa de papa, las hundimos en la mezcla de leche y huevo, las cubrimos de queso y luego las empanizamos. Ponemos la cucharada de mantequilla en el sartén y una vez derretida colocamos las tortitas en el sartén para dorarlas.</textarea> 
-                        </center>
-                             <div class="col-md-12">
-                        <p class="datePost">Fecha 4/13/2017</p>
-                    </div>
-                             <a href="home.html"><input type="button" class="editarButtonsCancelar" value="Cancelar"/></a>
-                            
-                                <input type="submit" class="editarButtonsGuardarCambios" value="Guardar cambios"/>
-                             
-                    </form>
-                    </div>                                     
-                    
-                </div>
-                
-            </div>
-      
-            
-            
+<section ng-controller="editarPostController">
+    <div class="col-md-8 postBackground">
+        <div class="row">
+            <div class="profile-content">
 
+                <div class="col-md-12">
+                    <img class="center-block imgPost img-responsive" ng-src="img/publicaciones/{{post.image}}" />
+                </div>
+
+                <div class="col-md-12 homeText">
+                    <form class="editarText">
+                        <input type="text" class="editarInputTitulo" id="editarInputTitulo" value="{{ post.title }}" />
+                        <hr class="separadorPosts">
+                        <img class="homeUsersIcon img-responsive" ng-src="/img/usuarios/{{post.avatar}}" />
+                        <p class="homeUsersname">{{post.userName}}</p>
+                        <center>
+                            <textarea class="form-control" cols="5" rows="5" id="editarDescripcion" maxlength="250">{{post.description}}</textarea>
+                            <textarea class="form-control" cols="5" rows="5" id="editarIngredientes" maxlength="250">{{post.ingredients}}</textarea>
+                            <textarea class="form-control" cols="5" rows="5" id="editarProcedimiento" maxlength="250">{{post.method}}</textarea>
+                        </center>
+                        <div class="col-md-12">
+                            <p class="datePost">{{post.created_at}}</p>
+                        </div>
+                        <a href="#home"><input type="button" class="editarButtonsCancelar" value="Cancelar"/></a>
+                        <input type="submit" class="editarButtonsGuardarCambios" value="Guardar cambios" ng-click="guardarClick()"/>
+                    </form>
+                </div>
+
+            </div>
         </div>
+    </div>
 </section>
